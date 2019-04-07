@@ -1,11 +1,11 @@
-# Project 3: PCA, Softmax Regression and NN
+# Project 2: PCA, Softmax Regression, and Neural Networks
 
 In this project, we will explore dimensionality reduction (PCA), softmax regression and neural networks.
 
 Files to turn in:
 
 ```
-dr.py           Implementation of PCA
+PCA.ipynb       Implementation of PCA
 softmax.py      Implementation of softmax regression
 nn.py           Implementation of fully connected neural network
 writeup.pdf     Answers all the written questions in this assignment
@@ -14,86 +14,49 @@ writeup.pdf     Answers all the written questions in this assignment
 You will be using helper functions in the following `.py` files and datasets:
 
 ```
-util.py         Helper functions for PCA
 datasets.py     Helper functions for PCA
 utils.py        Helper functions for Softmax Regression and NN
 digits          Toy dataset for PCA
 data/*          Training and dev data for SR and NN
 ```
 
-## Part 1 - PCA [30%]
+## Part 1 - Principal Component Analysis (PCA) [35%]
 
-Files you might want to look at for PCA:
+### 1.1 - Implement PCA [15%]
 
-```
-datasets.py     Some simple toy data sets
-digits          Digits data
-util.py         Utility functions, plotting, etc.
-```
+Our first tasks are to implement PCA. If implemented correctly, these should be 5-line functions (plus the supporting code I've provided): just be sure to use `numpy`'s eigenvalue computation code. Implement PCA in the function `pca` in [`PCA.ipynb`](PCA.ipynb).
 
-Our first tasks are to implement PCA. If implemented correctly, these should be 5-line functions (plus the supporting code I've provided): just be sure to use `numpy`'s eigenvalue computation code. Implement PCA in the function `pca` in `dr.py`.
+The pseudo-code in [Algorithm 37 in CIML](http://ciml.info/dl/v0_99/ciml-v0_99-ch15.pdf) demonstrates the role of covariance matrix in PCA. However, the implementation of covariance matrix in practice requires much more concerns. One of them is to decide whether we require an unbiased estimation of the covariance matrix, i.e. normalize `D` by `N-1` instead of `N` (biased). Even the popular packages, such as matlab and sklearn, differ in the implementation. To make things easy, we'll require the submitted code to implement an unbiased version.
 
-The pseudo-code in Algorithm 37 in CIML demonstrates the role of covariance matrix in PCA. However, the implementation of covariance matrix in practice requires much more concerns. One of them is to decide whether we require an unbiased estimation of the covariance matrix, i.e. normalize `D` by `N-1` instead of `N` (biased). Even the popular packages, such as matlab and sklearn, differ in the implementation. To make things easy, we'll require the submitted code to implement an unbiased version.
+### 1.2 - Visualization of MNIST [5%]
+
+Implement the function `draw_digits` in [`PCA.ipynb`](PCA.ipynb). Here,
+[`matplotlib`](https://matplotlib.org/) will be useful for you.
+
+### 1.3 - Normalized Eigenvalues [10%]
+
+Plot the normalized eigenvalues for the MNIST digits. How many eigenvectors do you have to include before you've accounted for 90% of the variance? 95%?
+
+### 1.4 - Visualization of Dimensionality Reduction [5%]
+
+Plot the top 50 eigenvectors. Do these look like digits? Should they? Why or why not?
+
+### Hints
+
+1. Read reference 2.
+2. [`np.linalg.eig`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.eig.html), [`np.argsort`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.argsort.html), and [`np.cumsum`](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.cumsum.html) will be of use.
+3. Take the real components of the eigenvalues and eigenvectors.
 
 ### Restrictions
 
 The use of `sklearn.decomposition.PCA` or `numpy.cov` is prohibited.
 
-### PCA references
+### References
 
 1. [PCA Tutorial](http://www.cs.otago.ac.nz/cosc453/student_tutorials/principal_components.pdf)
 2. [Mathematics of PCA](https://www.stat.cmu.edu/~cshalizi/uADA/16/lectures/17.pdf)
 3. [Sample Mean and Covariance](https://en.wikipedia.org/wiki/Sample_mean_and_covariance)
-
-Qpca1 (15%) Implement PCA
-
-Our first test of PCA will be on Gaussian data with a known covariance matrix. First, let's generate some data and see how it looks, and see what the sample covariance is:
-
->>> from numpy import *
->>> from matplotlib.pyplot import *
->>> import util
->>> Si = util.sqrtm(array([[3,2],[2,4]]))
->>> x = dot(random.randn(1000,2), Si)
->>> plot(x[:,0], x[:,1], 'b.')
->>> show(False)
->>> dot(x.T,x) / real(x.shape[0]-1) # The sample covariance matrix. Random generated data cause result to vary
-array([[ 3.01879339,  2.07256783],
-       [ 2.07256783,  4.15089407]])
-(Note: The reason we have to do a matrix square-root on the covariance is because Gaussians are transformed by standard deviations, not by covariances.)
-
-Note that the sample covariance of the data is almost exactly the true covariance of the data. If you run this with 100,000 data points (instead of 1000), you should get something even closer to [[3,2],[2,4]].
-
-Now, let's run PCA on this data. We basically know what should happen, but let's make sure it happens anyway (still, given the random nature, the numbers won't be exactly the same).
-
->>> import dr
->>> (P,Z,evals) = dr.pca(x, 2)
->>> Z
-array([[-0.60270316, -0.79796548],
-       [-0.79796548,  0.60270316]])
->>> evals
-array([ 5.72199341,  1.45051781])
-This tells us that the largest eigenvalue corresponds to the direction [-0.603, -0.798] and the second largest corresponds to the direction [-0.798, 0.603]. We can project the data onto the first eigenvalue and plot it in red, and the second eigenvalue in green. (Unfortunately we have to do some ugly reshaping to get dimensions to match up.)
-
->>> x0 = dot(dot(x, Z[:,0]).reshape(1000,1), Z[:,0].reshape(1,2))
->>> x1 = dot(dot(x, Z[:,1]).reshape(1000,1), Z[:,1].reshape(1,2))
->>> plot(x[:,0], x[:,1], 'b.', x0[:,0], x0[:,1], 'r.', x1[:,0], x1[:,1], 'g.')
->>> show(False)
-Now, back to digits data. Let's look at some "eigendigits." (These numbers should be exact match)
-
->>> import datasets
->>> (X,Y) = datasets.loadDigits()
->>> (P,Z,evals) = dr.pca(X, 784)
->>> evals
-array([ 0.05471459,  0.04324574,  0.03918324,  0.03075898,  0.02972407, .....
-Eventually, the eigenvalues drop to zero (some may be negative due to floating point errors).
-
-Qpca2 (10%): Plot the normalized eigenvalues (include the plot in your writeup). How many eigenvectors do you have to include before you've accounted for 90% of the variance? 95%? (Hint: see function cumsum.)
-
-Now, let's plot the top 50 eigenvectors:
-
->>> util.drawDigits(Z.T[:50,:], arange(50))
->>> show(False)
-Qpca3 (5%): Do these look like digits? Should they? Why or why not? (Include the plot in your write-up.) (Make sure you have got rid of the imaginary part in pca.)
+4. [Eigenpictures](http://engr.case.edu/merat_francis/EECS%20490%20F04/References/Face%20Recognition/LD%20Face%20analysis.pdf)
 
 Part II    Softmax Regression [45%]
 Files to edit/turn in for this part
