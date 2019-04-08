@@ -72,7 +72,20 @@ For both problems, assume there are `C` classes, `n` be the number of samples, a
 
 ### 2.2 - Implementing a Softmax Classifier [15%]
 
-Implement `cost` and `predict` in the `SoftmaxRegression` class provided. You can check the correctness of your implementation in the notebook.
+Implement `cost` and `predict` functions in the `SoftmaxRegression` class provided.
+You can check the correctness of your implementation in the notebook.
+
+### 2.3 - Stability [10%]
+
+In the `cost` function of `SoftmaxRegression`, we see the line
+
+```python3
+W_X = W_X - np.amax(W_X)
+```
+
+1. What is this operation doing?
+2. Show that this does not affect the predicted probabilities.
+3. Why might this be an optimization? Justify your answer.
 
 ### Part 2 References
 
