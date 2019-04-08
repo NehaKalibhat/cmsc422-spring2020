@@ -41,7 +41,7 @@ Plot the normalized eigenvalues for the MNIST digits. How many eigenvectors do y
 
 Plot the top 50 eigenvectors. Do these look like digits? Should they? Why or why not?
 
-### Hints
+### Part 1 Hints
 
 1. Read reference 2.
 2. [`np.linalg.eig`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.eig.html), [`np.argsort`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.argsort.html), and [`np.cumsum`](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.cumsum.html) will be of use.
@@ -87,22 +87,19 @@ W_X = W_X - np.amax(W_X)
 2. Show that this does not affect the predicted probabilities.
 3. Why might this be an optimization? Justify your answer.
 
+### 2.4 - Analysis of Classifier Accuracy [10%]
+
+Plot the accuracy of the classifier as a function of the number of examples seen.
+Do you observe any overfitting or underfitting? Discuss and expain what you observe.
+
 ### Part 2 References
 
 1. [Softmax and its Derivative](https://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative/)
 
-Qsr3 (10%)
+### Part 2 Hints
 
-In the cost function, we see the line
-
-W_X = W_X - np.max(W_X)
-This means that each entry is reduced by the largest entry in the matrix.
-(1) Show that this does not affect the predicted probabilities.
-(2) Why might this be an optimization over using W_X? Justify your answer.
-
-Qsr4 (10%)
-
-Use the learningCurve function in runClassifier.py to plot the accuracy of the classifier as a function of the number of examples seen. Include the plot in your write-up. Do you observe any overfitting or underfitting? Discuss and expain what you observe.
+1. What happens when you take the exponential of a large positive number? A large negative number?
+2. Again, use [`matplotlib`](https://matplotlib.org/) for 2.4.
 
 Part III NN [25% and Extra 15%]
 Files to edit/turn in.
