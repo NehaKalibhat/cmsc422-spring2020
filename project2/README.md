@@ -51,85 +51,33 @@ Plot the top 50 eigenvectors. Do these look like digits? Should they? Why or why
 
 The use of `sklearn.decomposition.PCA` or `numpy.cov` is prohibited.
 
-### References
+### Part 1 References
 
 1. [PCA Tutorial](http://www.cs.otago.ac.nz/cosc453/student_tutorials/principal_components.pdf)
 2. [Mathematics of PCA](https://www.stat.cmu.edu/~cshalizi/uADA/16/lectures/17.pdf)
 3. [Sample Mean and Covariance](https://en.wikipedia.org/wiki/Sample_mean_and_covariance)
 4. [Eigenpictures](http://engr.case.edu/merat_francis/EECS%20490%20F04/References/Face%20Recognition/LD%20Face%20analysis.pdf)
 
-# Part 2 - Softmax Regression [45%]
+## Part 2 - Softmax Regression [45%]
 
 For this part of the project, you'll be working with [`softmax.ipynb`](softmax.ipynb).
+Write your answers in the notebook.
 
-We can also train on this model with an appropriate loss function. The Softmax loss function is given by
+### 2.1 - Questions about the Softmax Function [5%]
 
-LaTeX: L(W) = -\left[ \sum_{i=1}^{m} \sum_{k=1}^{K} 1\left\{y_i = k\right\} \log \frac{e^{\vec{w_k}\cdot \vec{x_i}}}{\sum_{j=1}^K e^{\vec{w_j}\cdot \vec{x_i}}}\right] L ( W ) = − [ ∑ i = 1 m ∑ k = 1 K 1 { y i = k } log ⁡ e w k → ⋅ x i → ∑ j = 1 K e w j → ⋅ x i → ]
+For both problems, assume there are `C` classes, `n` be the number of samples, and `d` be the number of features for each sample.
 
-where LaTeX: m m  is the number of examples, LaTeX: k k  is the number of classes, and LaTeX: 1\left\{y_i = k\right\} 1 { y i = k } is an indicator variable that equals 1 when the statement inside the brackets is true, and 0 otherwise. The gradient (which you will not derive) is given by:
+1. Prove that the probabilities outputed by the softmax function sum to 1.
+2. Given the description of matrices `W`, `X` above, what are the dimensions of `W`, `X`, and `WX`? (Note that the description is provided in the notebook.)
 
-LaTeX: \nabla_{\vec{w_k}} L(W) = -\sum_{i=1}^{m}{ \left[ \vec{x_i} \left( 1\{y_i = k\} - P[y_i = k]\right) \right]} ∇ w k → L ( W ) = − ∑ i = 1 m [ x i → ( 1 { y i = k } − P [ y i = k ] ) ]
+### 2.2 - Implementing a Softmax Classifier [15%]
 
-Note that the indicator and the probabilities can be represented as matrices, which makes the code for the loss and the gradient very simple. (See here (Links to an external site.) for more details)
+Implement `cost` and `predict` in the `SoftmaxRegression` class provided. You can check the correctness of your implementation in the notebook.
 
-softmax.py contains a mostly-complete implementation of Softmax Regression. A code stub also has been provided in run_softmax.py. Once you correctly implement the incomplete portions of softmax.py, you will be able to run run_softmax.py in order to classify the MNIST digits.
+### Part 2 References
 
-Qsr2 (15%)
+1. [Softmax and its Derivative](https://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative/)
 
-(1) Complete the implementation of the cost function.
-(2) Complete the implementation of the predict function.
-
-Check your implementation by running:
-
->>> python run_softmax.py
-The output should be:
-
-RUNNING THE L-BFGS-B CODE
-
-* * *
-
-Machine precision = 2.220D-16
-N = 7840 M = 10
-
-At X0 0 variables are exactly at the bounds
-
-At iterate 0 f= 2.30259D+00 |proj g|= 6.37317D-02
-
-At iterate 1 f= 1.52910D+00 |proj g|= 6.91122D-02
-
-At iterate 2 f= 7.72038D-01 |proj g|= 4.43378D-02
-
-...
-
-At iterate 401 f= 2.19686D-01 |proj g|= 2.52336D-04
-
-At iterate 402 f= 2.19665D-01 |proj g|= 2.04576D-04
-
-* * *
-
-Tit = total number of iterations
-Tnf = total number of function evaluations
-Tnint = total number of segments explored during Cauchy searches
-Skip = number of BFGS updates skipped
-Nact = number of active bounds at final generalized Cauchy point
-Projg = norm of the final projected gradient
-F = final function value
-
-* * *
-
-N Tit Tnf Tnint Skip Nact Projg F
-7840 402 431 1 0 0 2.046D-04 2.197D-01
-F = 0.21966482316858085
-
-STOP: TOTAL NO. of ITERATIONS EXCEEDS LIMIT
-
-Cauchy time 0.000E+00 seconds.
-Subspace minimization time 0.000E+00 seconds.
-Line search time 0.000E+00 seconds.
-
-Total User time 0.000E+00 seconds.
-
-Accuracy: 93.99%
 Qsr3 (10%)
 
 In the cost function, we see the line
