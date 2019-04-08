@@ -58,43 +58,9 @@ The use of `sklearn.decomposition.PCA` or `numpy.cov` is prohibited.
 3. [Sample Mean and Covariance](https://en.wikipedia.org/wiki/Sample_mean_and_covariance)
 4. [Eigenpictures](http://engr.case.edu/merat_francis/EECS%20490%20F04/References/Face%20Recognition/LD%20Face%20analysis.pdf)
 
-Part II    Softmax Regression [45%]
-Files to edit/turn in for this part
+# Part 2 - Softmax Regression [45%]
 
-softmax.py
-writeup.pdf
- (Links to an external site.)
-The goal of this part of the project is to implement Softmax Regression in order to classify the MNIST digit dataset. Softmax Regression is essentially a two-layer neural network where the output layer applies the Softmax cost function, a multiclass generalization of the logistic cost function.
-
-In logistic regression, we have a hypothesis function of the form
-
-LaTeX: P[y = 1] = \frac{1}{1+e^{-\vec{w}\cdot\vec{x}}} P [ y = 1 ] = 1 1 + e − w → ⋅ x →
-
-where LaTeX: \vec{w} w →   is our weight vector. Like the hyperbolic tangent function, the logistic function is also a sigmoid function with the characteristic 's'-like shape, though it has a range of (0, 1) instead of (-1, 1). Note that this is
-technically not a classifier since it returns probabilities instead of a predicted class, but it's easy to turn it into a classifier by simply choosing the class with the highest probability.
-
-Since logistic regression is used for binary classification, it is easy to see that:
-LaTeX: \begin{align*}
-P[y = 1] &= \frac{1}{1+e^{-\vec{w}\cdot\vec{x}}} \\&= \frac{e^{\vec{w}\cdot\vec{x}}}{e^{\vec{w}\cdot\vec{x}}+1} \\&= \frac{e^{\vec{w}\cdot\vec{x}}}{e^{\vec{w}\cdot\vec{x}}+e^{\vec{0}\cdot\vec{x}}}
-\end{align*} P [ y = 1 ] = 1 1 + e − w → ⋅ x → = e w → ⋅ x → e w → ⋅ x → + 1 = e w → ⋅ x → e w → ⋅ x → + e 0 → ⋅ x →
-
-Similarly,
-LaTeX: \begin{align*}
-P[y = 0] &= 1 - \frac{1}{1+e^{-\vec{w}\cdot\vec{x}}} \\
-&= \frac{e^{\vec{w}\cdot\vec{x}}+1}{e^{\vec{w}\cdot\vec{x}}+1} - \frac{e^{\vec{w}\cdot\vec{x}}}{e^{\vec{w}\cdot\vec{x}}+1} \\
-&= \frac{e^{\vec{0}\cdot\vec{x}}}{e^{\vec{w}\cdot\vec{x}}+e^{\vec{0}\cdot\vec{x}}}
-\end{align*} P [ y = 0 ] = 1 − 1 1 + e − w → ⋅ x → = e w → ⋅ x → + 1 e w → ⋅ x → + 1 − e w → ⋅ x → e w → ⋅ x → + 1 = e 0 → ⋅ x → e w → ⋅ x → + e 0 → ⋅ x →
-
-From this form it appears that we can assign the vector LaTeX: \vec{w_1} = \vec{w} w 1 → = w →  as the weight vector for class 1 and LaTeX: \vec{w_0} = \vec{0} w 0 → = 0 →  as the weight vector for class 0. Our probability formulas are now unified into one equation:
-
-LaTeX: P[y = i] = \frac{e^{\vec{w_i}\cdot\vec{x}}}{\sum_{j}e^{\vec{w_j}\cdot\vec{x}}} P [ y = i ] = e w i → ⋅ x → ∑ j e w j → ⋅ x →
-
-This immediately motivates generalization to classification with more than 2 classes. By assigning a separate weight vector LaTeX: \vec{w_i} w i →  to each class, for each example LaTeX: \vec{x} x →  we can predict the probability that it is class LaTeX: i i , and again we can classify by choosing the most probable class. A more compact way of representing the values LaTeX: \vec{w_i}\cdot\vec{x} w i → ⋅ x →  is LaTeX: W \vec{x} W x →  where each row LaTeX: i i  of W is LaTeX: \vec{w_i} w i → . We can also represent a dataset LaTeX: \{\vec{x_i}\} { x i → }  with a matrix LaTeX: X X  where each column is
-a single example.
-
-Qsr1 (10%)
-(1) Show that the probabilities sum to 1.
-(2) What are the dimensions of LaTeX: W W ? LaTeX: X X ? LaTeX: WX W X ?
+For this part of the project, you'll be working with [`softmax.ipynb`](softmax.ipynb).
 
 We can also train on this model with an appropriate loss function. The Softmax loss function is given by
 
