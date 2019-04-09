@@ -102,14 +102,14 @@ W_X = W_X - np.amax(W_X)
 Plot the accuracy of the classifier as a function of the number of examples seen.
 Do you observe any overfitting or underfitting? Discuss and expain what you observe.
 
-### Part 2 References
-
-1. [Softmax and its Derivative](https://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative/)
-
 ### Part 2 Hints
 
 1. What happens when you take the exponential of a large positive number? A large negative number?
 2. Again, use [`matplotlib`](https://matplotlib.org/) for 2.4.
+
+### Part 2 References
+
+1. [Softmax and its Derivative](https://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative/)
 
 ## How to Submit
 
