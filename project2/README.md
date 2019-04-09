@@ -42,9 +42,10 @@ The pseudo-code in [Algorithm 37 in CIML](http://ciml.info/dl/v0_99/ciml-v0_99-c
 Implement the function `draw_digits` in [`PCA.ipynb`](PCA.ipynb). Here,
 [`matplotlib`](https://matplotlib.org/) will be useful for you.
 
-### 1.3 - Normalized Eigenvalues [10%]
+### 1.3 - Plotting Explained Variance [10%]
 
-Plot the normalized eigenvalues for the MNIST digits. How many eigenvectors do you have to include before you've accounted for 90% of the variance? 95%?
+Plot the explained variance of the principal components, with x-axis being the number of principal components, and the y-axis being the percent variance explained. How many eigenvectors do you have to include before you've accounted for 90% of the variance?
+95%? Label these points on your plot.
 
 ### 1.4 - Visualization of Dimensionality Reduction [5%]
 
