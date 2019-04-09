@@ -39,6 +39,10 @@ Our first tasks are to implement PCA. If implemented correctly, these should be 
 
 The pseudo-code in [Algorithm 37 in CIML](http://ciml.info/dl/v0_99/ciml-v0_99-ch15.pdf) demonstrates the role of covariance matrix in PCA. However, the implementation of covariance matrix in practice requires much more concerns. One of them is to decide whether we require an unbiased estimation of the covariance matrix, i.e. normalize `D` by `N-1` instead of `N` (biased). Even the popular packages, such as matlab and sklearn, differ in the implementation. To make things easy, we'll require the submitted code to implement an unbiased version.
 
+#### Restrictions
+
+The use of `sklearn.decomposition.PCA` or `np.cov` is prohibited.
+
 ### 1.2 - Visualization of MNIST [5%]
 
 Implement the function `draw_digits` in [`PCA.ipynb`](PCA.ipynb). Here,
@@ -58,10 +62,6 @@ Plot the top 50 eigenvectors. Do these look like digits? Should they? Why or why
 1. Read reference 2.
 2. [`np.linalg.eig`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.eig.html), [`np.argsort`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.argsort.html), and [`np.cumsum`](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.cumsum.html) will be of use.
 3. Take the real components of the eigenvalues and eigenvectors.
-
-### Restrictions
-
-The use of `sklearn.decomposition.PCA` or `numpy.cov` is prohibited.
 
 ### Part 1 References
 
