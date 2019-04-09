@@ -80,7 +80,7 @@ For both problems, assume there are `C` classes, `n` be the number of samples, a
 1. Prove that the probabilities outputed by the softmax function sum to 1.
 2. Given the description of matrices `W`, `X` above, what are the dimensions of `W`, `X`, and `WX`? (Note that the description is provided in the notebook.)
 
-### 2.2 - Implementing a Softmax Classifier [15%]
+### 2.2 - Implementing a Softmax Classifier [20%]
 
 Implement `cost` and `predict` functions in the `SoftmaxRegression` class provided.
 You can check the correctness of your implementation in the notebook.
