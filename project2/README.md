@@ -5,9 +5,8 @@ In this project, we will explore dimensionality reduction (PCA), softmax regress
 Files to turn in:
 
 ```
-PCA.ipynb       Implementation of PCA
-softmax.ipynb   Implementation of softmax regression
-writeup.pdf     Answers all the written questions in this assignment
+p2_pca_softmax_nn.ipynb       Implementation of project
+writeup.pdf                   Notebook exported as PDF via Latex
 ```
 
 See the [how to submit](#how-to-submit) section for more details.
@@ -15,7 +14,7 @@ See the [how to submit](#how-to-submit) section for more details.
 You will be using the following datasets:
 
 ```
-data/*          Training data for Softmax Regression and PCA
+data/*                        Training data for PCA and Softmax Regression
 ```
 
 ## Getting Started
