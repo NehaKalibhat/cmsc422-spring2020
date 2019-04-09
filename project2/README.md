@@ -29,11 +29,13 @@ To exit the environment, use `conda deactivate`.
 
 Here's a [tutorial on using Jupyter](https://www.youtube.com/watch?v=HW29067qVWk) if you're not already familiar with the tool!
 
+The entire project will be done in [`p2_pca_softmax_nn.ipynb`](p2_pca_softmax_nn.ipynb). Please write your answers in the notebook.
+
 ## Part 1 - Principal Component Analysis (PCA) [35%]
 
 ### 1.1 - Implement PCA [15%]
 
-Our first tasks are to implement PCA. If implemented correctly, these should be 5-line functions (plus the supporting code I've provided): just be sure to use `numpy`'s eigenvalue computation code. Implement PCA in the function `pca` in [`PCA.ipynb`](PCA.ipynb).
+Our first tasks are to implement PCA. If implemented correctly, these should be 5-line functions (plus the supporting code I've provided): just be sure to use `numpy`'s eigenvalue computation code. Implement PCA in the function `pca`.
 
 The pseudo-code in [Algorithm 37 in CIML](http://ciml.info/dl/v0_99/ciml-v0_99-ch15.pdf) demonstrates the role of covariance matrix in PCA. However, the implementation of covariance matrix in practice requires much more concerns. One of them is to decide whether we require an unbiased estimation of the covariance matrix, i.e. normalize `D` by `N-1` instead of `N` (biased). Even the popular packages, such as matlab and sklearn, differ in the implementation. To make things easy, we'll require the submitted code to implement an unbiased version.
 
@@ -43,7 +45,7 @@ The use of `sklearn.decomposition.PCA` or `np.cov` is prohibited.
 
 ### 1.2 - Visualization of MNIST [5%]
 
-Implement the function `draw_digits` in [`PCA.ipynb`](PCA.ipynb). Here,
+Implement the function `draw_digits`.
 [`matplotlib`](https://matplotlib.org/) will be useful for you.
 
 ### 1.3 - Plotting Explained Variance [10%]
@@ -69,9 +71,6 @@ Plot the top 50 eigenvectors. Do these look like digits? Should they? Why or why
 4. [Eigenpictures](http://engr.case.edu/merat_francis/EECS%20490%20F04/References/Face%20Recognition/LD%20Face%20analysis.pdf)
 
 ## Part 2 - Softmax Regression [45%]
-
-For this part of the project, you'll be working with [`softmax.ipynb`](softmax.ipynb).
-Write your answers in the notebook.
 
 ### 2.1 - Questions about the Softmax Function [5%]
 
