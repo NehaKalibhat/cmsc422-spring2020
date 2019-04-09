@@ -1,6 +1,6 @@
 # Project 2: PCA, Softmax Regression, and Neural Networks
 
-In this project, we will explore dimensionality reduction (PCA), softmax regression and neural networks.
+In this project, we will explore dimensionality reduction (PCA), softmax regression and neural networks. You are allowed to work in groups, with a max size of 3.
 
 Files to turn in:
 
@@ -9,6 +9,8 @@ PCA.ipynb       Implementation of PCA
 softmax.ipynb   Implementation of softmax regression
 writeup.pdf     Answers all the written questions in this assignment
 ```
+
+See the [how to submit](#how-to-submit) section for more details.
 
 You will be using helper functions in the following `.py` files and datasets:
 
@@ -107,3 +109,7 @@ Do you observe any overfitting or underfitting? Discuss and expain what you obse
 
 1. What happens when you take the exponential of a large positive number? A large negative number?
 2. Again, use [`matplotlib`](https://matplotlib.org/) for 2.4.
+
+## How to Submit
+
+Tentatively, submission will be done through [Gradescope](http://gradescope.com). Here, you will be able to specify the group members you worked with.
