@@ -20,14 +20,16 @@ digits          Toy dataset for PCA
 data/*          Training and dev data for Softmax Regression
 ```
 
-## Setup
+## Getting Started
 
 1. Install [Conda](https://docs.anaconda.com/anaconda/install/). We'll use it to ensure that our environments are the same.
 2. In this directory run `conda env create -f environment.yml`.
 3. Run the environment using `conda activate cmsc422-p2`.
-4. To view the [jupyter notebook](https://jupyter.org) files, run `jupyter notebook`.
+4. To view the [Jupyter Notebook](https://jupyter.org) files, run `jupyter notebook`.
 
 To exit the environment, use `conda deactivate`.
+
+Here's a [tutorial on using Jupyter](https://www.youtube.com/watch?v=HW29067qVWk) if you're not already familiar with the tool!
 
 ## Part 1 - Principal Component Analysis (PCA) [35%]
 
