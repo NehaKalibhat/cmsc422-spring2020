@@ -12,12 +12,10 @@ writeup.pdf     Answers all the written questions in this assignment
 
 See the [how to submit](#how-to-submit) section for more details.
 
-You will be using helper functions in the following `.py` files and datasets:
+You will be using the following datasets:
 
 ```
-datasets.py     Helper functions for PCA
-digits          Toy dataset for PCA
-data/*          Training and dev data for Softmax Regression
+data/*          Training data for Softmax Regression and PCA
 ```
 
 ## Getting Started
