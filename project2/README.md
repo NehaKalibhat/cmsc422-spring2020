@@ -1,6 +1,6 @@
-# Project 2: PCA, Softmax Regression, and Neural Networks
+# Project 2: PCA, Softmax Regression, and ML Frameworks
 
-In this project, we will explore dimensionality reduction (PCA), softmax regression and neural networks. You are allowed to work in groups, with a max size of 3.
+In this project, we will explore dimensionality reduction (PCA), softmax regression and popular machine learning libraries. You are allowed to work in groups, with a max size of 3.
 
 Files to turn in:
 
