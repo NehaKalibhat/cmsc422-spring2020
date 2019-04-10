@@ -47,6 +47,14 @@ The use of `sklearn.decomposition.PCA` or `np.cov` is prohibited.
 Implement the function `draw_digits`.
 [`matplotlib`](https://matplotlib.org/) will be useful for you.
 
+It must implement the following specifications:
+
+1. Visualize `K` random samples from `X`, with no repeats.
+2. Digits must be visualized on 5 column subplots.
+3. A gray colormap must be used to visualize the digits.
+4. The label of the digit should be added as white text on the upper left corner of the subplot, with font size 16.
+5. The axes of each subplot should be turned off.
+
 ### 1.3 - Plotting Explained Variance [10%]
 
 Plot the explained variance of the principal components, with x-axis being the number of principal components, and the y-axis being the percent variance explained. How many eigenvectors do you have to include before you've accounted for 90% of the variance?
