@@ -1,0 +1,5 @@
+name: cmsc422-p2
+channels:
+  - defaults
+prefix: /Users/rexledesma/anaconda3/envs/cmsc422-p2
+
