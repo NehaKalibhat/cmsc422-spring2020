@@ -5,7 +5,7 @@ In this project, we will explore dimensionality reduction (PCA), softmax regress
 Files to turn in:
 
 ```
-p2_pca_softmax_nn.ipynb       Implementation of project
+p2_pca_softmax_dl.ipynb       Implementation of project
 writeup.pdf                   Notebook exported as PDF via Latex
 ```
 
@@ -28,7 +28,7 @@ To exit the environment, use `conda deactivate`.
 
 Here's a [tutorial on using Jupyter](https://www.youtube.com/watch?v=HW29067qVWk) if you're not already familiar with the tool!
 
-The entire project will be done in [`p2_pca_softmax_nn.ipynb`](p2_pca_softmax_nn.ipynb). Please write your answers in the notebook.
+The entire project will be done in [`p2_pca_softmax_dl.ipynb`](p2_pca_softmax_dl.ipynb). Please write your answers in the notebook.
 
 ## Part 1 - Principal Component Analysis (PCA) [35%]
 
@@ -116,6 +116,21 @@ Do you observe any overfitting or underfitting? Discuss and expain what you obse
 ### Part 2 References
 
 1. [Softmax and its Derivative](https://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative/)
+
+## Part 3 - Deep Learning Software [20%]
+
+We'll examine the use of software packages for deep learning, focusing on TensorFlow and PyTorch.
+
+1. [Watch this lecture from Stanford](https://www.youtube.com/watch?v=6SlgtELqOWc).
+2. Read the papers on [TensorFlow](http://download.tensorflow.org/paper/whitepaper2015.pdf) and [PyTorch](https://openreview.net/pdf?id=BJJsrmfCZ).
+
+Summarize the lecture and each of the papers. Some points that you may discuss are listed below. Note that this list is not comprehensive.
+
+- What is difference between CPU and GPU?
+- What are benefits that these machine learning libraries offer?
+- What is the difference between static and dynamic computational graphs?
+- How gradient computation is done in these frameworks?
+- Which framework would you use and why?
 
 ## How to Submit
 
