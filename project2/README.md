@@ -40,7 +40,7 @@ The pseudo-code in [Algorithm 37 in CIML](http://ciml.info/dl/v0_99/ciml-v0_99-c
 
 #### Restrictions
 
-The use of `sklearn.decomposition.PCA` or `np.cov` is prohibited.
+The use of `sklearn.decomposition.PCA` or `np.cov` is prohibited. You cannot use for loops!! Make sure your operations are vectorized.
 
 ### 1.2 - Visualization of MNIST [5%]
 
@@ -90,6 +90,10 @@ For both problems, assume there are `C` classes, `n` be the number of samples, a
 
 Implement `cost` and `predict` functions in the `SoftmaxRegression` class provided.
 You can check the correctness of your implementation in the notebook.
+
+#### Restrictions
+
+You cannot use for loops!! Make sure your operations are vectorized.
 
 ### 2.3 - Stability [10%]
 
