@@ -5,8 +5,7 @@ In this project, we will explore dimensionality reduction (PCA), softmax regress
 Files to turn in:
 
 ```
-p2_pca_softmax_dl.ipynb       Implementation of project
-writeup.pdf                   Notebook exported as PDF via Latex
+p2_pca_softmax_dl.pdf         Notebook exported as PDF via Latex
 ```
 
 See the [how to submit](#how-to-submit) section for more details.
