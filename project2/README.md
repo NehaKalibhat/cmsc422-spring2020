@@ -1,6 +1,6 @@
 # Project 2: PCA, Softmax Regression, and ML Frameworks
 
-In this project, we will explore dimensionality reduction (PCA), softmax regression and popular machine learning libraries. You are allowed to work in groups, with a max size of 3.
+In this project, we will explore dimensionality reduction (PCA), softmax regression and popular machine learning libraries. 
 
 Files to turn in:
 
@@ -138,4 +138,4 @@ Summarize the lecture and each of the papers. Some points that you may discuss a
 
 ## How to Submit
 
-Tentatively, submission will be done through [Gradescope](http://gradescope.com). Here, you will be able to specify the group members you worked with.
+Tentatively, submission will be done through [Gradescope](http://gradescope.com). Upload a PDF of the notebook. 
